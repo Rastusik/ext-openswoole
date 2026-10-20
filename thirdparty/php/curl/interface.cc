@@ -1080,6 +1080,8 @@ static size_t fn_write_header(char *data, size_t size, size_t nmemb, void *ctx) 
             openswoole_curl_verify_handlers(ch, /* reporterror */ true);
             length = zval_get_long(&retval);
         }
+        zval_ptr_dtor(&argv[0]);
+        zval_ptr_dtor(&argv[1]);
 #endif
         break;
     }
